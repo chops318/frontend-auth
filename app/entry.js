@@ -20,9 +20,15 @@ noteApp.run(['$rootScope', ($rs) => {
   };
 }]);
 
-noteApp.config(['$routeProvier', function($rp){
+noteApp.config(['$routeProvider', function($rp){
   $rp
-    .when('/notes', {
+    .when('/', {
       template: require('./html/notes.html')
+    })
+    .when('/signup', {
+      template: require('./html/signup.html')
+    })
+    .otherwise({
+      redirectTo: '/'
     })
 }]);
