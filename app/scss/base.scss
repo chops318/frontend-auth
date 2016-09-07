@@ -1,0 +1,18 @@
+@import 'vendor/normalize/_normalize';
+@include normalize();
+@import 'vendor/bootstrap/stylesheets/_bootstrap';
+@import 'vendor/font-awesome/scss/font-awesome';
+@import '_theme';
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background-color: $app-default;
+}
+
+a {
+  color: $app-text
+}

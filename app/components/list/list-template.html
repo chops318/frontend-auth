@@ -1,0 +1,16 @@
+<div ng-init="listCtrl.getAllLists()">
+  <es-list-form button-text="Create List" save="listCtrl.createList(list)"></es-list-form>
+  <h1>Lists</h1>
+  <ul>
+    <li ng-repeat="list in listCtrl.lists">
+      <span ng-if="!list.editing">
+        {{list.name}}
+        <button class="btn btn-default" ng-click="listCtrl.deleteList(list)">Delete</button>
+        <button class="btn btn-default" ng-click="list.editing = true"> Edit</button>
+      </span>
+      <es-list-form save="listCtrl.updateList(list)" button-text="Upate List" list="list" ng-if="list.editing">
+        <button class="btn btn-default" ng-click="list.editing = false">Cancel</button>
+      </es-list-form>
+    </li>
+  </ul>
+</div>
